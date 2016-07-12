@@ -290,7 +290,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
         return foundView
     }
     
-	override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		// println("touchesBegan")
 		for obj in touches {
 			let touch = obj as! UITouch
@@ -335,7 +335,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 		}
 	}
 	
-	override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		//println("touchesMoved")
 		for obj in touches
 		{
@@ -379,7 +379,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 		}
 	}
 	
-	override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		for obj in touches {
 			
 			let touch = obj as! UITouch
@@ -428,7 +428,7 @@ class ForwardingView: UIView,UIGestureRecognizerDelegate {
 		}
 	}
 
-    override func touchesCancelled(touches: Set<NSObject>, withEvent event: UIEvent!) {
+    override func touchesCancelled(touches: Set<UITouch>!, withEvent event: UIEvent?){
         for obj in touches {
             if let touch = obj as? UITouch {
                 var view = self.touchToView[touch]
