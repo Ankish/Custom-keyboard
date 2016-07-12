@@ -3,7 +3,7 @@
 //  TastyImitationKeyboard
 //
 //  Created by Alexei Baboulevitch on 11/2/14.
-//  Copyright (c) 2014 Alexei Baboulevitch. All rights reserved.
+//  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
 
 import UIKit
@@ -12,11 +12,11 @@ class ImageKey: KeyboardKey {
     
     var image: UIImageView? {
         willSet {
-            var anImage = image
+            let anImage = image
             anImage?.removeFromSuperview()
         }
         didSet {
-            if var imageView = image {
+            if let imageView = image {
                 self.addSubview(imageView)
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 self.redrawImage()

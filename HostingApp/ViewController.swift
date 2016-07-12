@@ -3,7 +3,7 @@
 //  TransliteratingKeyboard
 //
 //  Created by Alexei Baboulevitch on 6/9/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
+//  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
 
 import UIKit
@@ -27,7 +27,7 @@ class HostingAppViewController: UIViewController {
     
     @IBAction func dismiss() {
         for view in self.view.subviews {
-            if var inputView = view as? UITextField {
+            if let inputView = view as? UITextField {
                 inputView.resignFirstResponder()
             }
         }
@@ -53,8 +53,8 @@ class HostingAppViewController: UIViewController {
     }
     
     func keyboardDidChangeFrame(notification: NSNotification) {
-        let frameBegin: CGRect! = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue()
-        let frameEnd: CGRect! = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue()
+        //let frameBegin: CGRect! = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue
+        let frameEnd: CGRect! = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue
         
         if frameEnd.height == referenceHeight {
             if firstHeightTime == nil {

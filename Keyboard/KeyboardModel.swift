@@ -3,7 +3,7 @@
 //  TransliteratingKeyboard
 //
 //  Created by Alexei Baboulevitch on 7/10/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
+//  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
 
 import Foundation
@@ -36,7 +36,7 @@ class Keyboard {
     
     func addKey(key: Key, row: Int, page: Int) {
         if self.pages.count <= page {
-            for i in self.pages.count...page {
+            for _ in self.pages.count...page {
                 self.pages.append(Page())
             }
         }
@@ -54,7 +54,7 @@ class Page {
     
     func addKey(key: Key, row: Int) {
         if self.rows.count <= row {
-            for i in self.rows.count...row {
+            for _ in self.rows.count...row {
                 self.rows.append([])
             }
         }

@@ -3,7 +3,7 @@
 //  TastyImitationKeyboard
 //
 //  Created by Alexei Baboulevitch on 10/5/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
+//  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
 
 import UIKit
@@ -27,7 +27,7 @@ class ExtraView: UIView {
         super.init(frame: CGRectZero)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         self.globalColors = nil
         self.darkMode = false
         self.solidColorMode = false

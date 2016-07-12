@@ -3,7 +3,7 @@
 //  TastyImitationKeyboard
 //
 //  Created by Alexei Baboulevitch on 10/22/14.
-//  Copyright (c) 2014 Apple. All rights reserved.
+//  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
 
 import Foundation
@@ -40,7 +40,7 @@ func memoize<T:Hashable, U>(fn : T -> U) -> T -> U {
     var cache = [T:U]()
     return {
         (val : T) -> U in
-        var value = cache[val]
+        let value = cache[val]
         if value != nil {
             return value!
         } else {

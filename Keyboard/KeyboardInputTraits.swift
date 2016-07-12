@@ -3,7 +3,7 @@
 //  RussianPhoneticKeyboard
 //
 //  Created by Alexei Baboulevitch on 11/1/14.
-//  Copyright (c) 2014 Alexei Baboulevitch. All rights reserved.
+//  Copyright (c) 2014 Alexei Baboulevitch ("Archagon"). All rights reserved.
 //
 
 import Foundation
@@ -29,12 +29,12 @@ extension KeyboardViewController {
     }
     
     func pollTraits() {
-        if let proxy = (self.textDocumentProxy as? UITextInputTraits) {
-            if let layout = self.layout {
-                let appearanceIsDark = (proxy.keyboardAppearance == UIKeyboardAppearance.Dark)
-                if appearanceIsDark != layout.darkMode {
-                    self.updateAppearances(appearanceIsDark)
-                }
+        let proxy = self.textDocumentProxy
+        
+        if let layout = self.layout {
+            let appearanceIsDark = (proxy.keyboardAppearance == UIKeyboardAppearance.Dark)
+            if appearanceIsDark != layout.darkMode {
+                self.updateAppearances(appearanceIsDark)
             }
         }
     }
